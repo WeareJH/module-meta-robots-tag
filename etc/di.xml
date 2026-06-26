@@ -3,4 +3,11 @@
     <!-- Service contracts -->
     <preference for="MageOS\MetaRobotsTag\Api\AttributesProviderInterface" type="MageOS\MetaRobotsTag\Model\AttributesProvider"/>
     <preference for="MageOS\MetaRobotsTag\Api\SetMetaRobotsInterface" type="MageOS\MetaRobotsTag\Model\SetMetaRobots"/>
+    <type name="Magento\CatalogGraphQl\Model\Resolver\Products\DataProvider\Product\CompositeCollectionProcessor">
+        <arguments>
+            <argument name="collectionProcessors" xsi:type="array">
+                <item name="metaRobotsAttributes" xsi:type="object">MageOS\MetaRobotsTag\Model\Resolver\CollectionProcessor\ProductAttributesProcessor</item>
+            </argument>
+        </arguments>
+    </type>
 </config>

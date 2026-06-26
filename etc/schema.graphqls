@@ -1,0 +1,11 @@
+interface ProductInterface {
+    meta_robots: String @resolver(class: "MageOS\\MetaRobotsTag\\Model\\Resolver\\ProductMetaRobots") @doc(description: "Computed meta robots directive for this product")
+}
+
+interface CategoryInterface {
+    meta_robots: String @resolver(class: "MageOS\\MetaRobotsTag\\Model\\Resolver\\CategoryMetaRobots") @doc(description: "Computed meta robots directive for this category")
+}
+
+type CmsPage {
+    meta_robots: String @resolver(class: "MageOS\\MetaRobotsTag\\Model\\Resolver\\CmsPageMetaRobots") @doc(description: "Computed meta robots directive for this CMS page")
+}

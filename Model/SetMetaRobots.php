@@ -44,6 +44,10 @@ class SetMetaRobots implements SetMetaRobotsInterface
         $indexFollowArchive = $this->attributesProvider->getAttributeValue($attributeCode, true);
         $newValue = $this->attributesProvider->getAttributeValue($attributeCode);
 
+        if ($this->findCaseInsensitiveMatch($newValue, $robots) !== false) {
+            return $robots;
+        }
+
         $existingIndex = $this->findCaseInsensitiveMatch($indexFollowArchive, $robots);
         if ($existingIndex !== false) {
             $robots[$existingIndex] = $newValue;
